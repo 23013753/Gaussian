@@ -1,56 +1,67 @@
-# Gaussian Elimination
+Norm of a matrix
+Aim
+To write a program to find the 1-norm, 2-norm and infinity norm of the matrix and display the result in two decimal places.
 
-## AIM:
-To write a program to find the solution of a matrix using Gaussian Elimination.
-
-## Equipments Required:
-1. Hardware – PCs
-2. Anaconda – Python 3.7 Installation / Moodle-Code Runner
-
-## Algorithm
-1. 
-2. 
-3. 
-4. 
-
-## Program:
-```
-/*
-Program to find the solution of a matrix using Gaussian Elimination.
-Developed by: 
-RegisterNumber: 
-/*
-Program to find the solution of a matrix using Gaussian Elimination.
-Developed by: 
-RegisterNumber: 
+Equipment’s required:
+Hardware – PCs
+Anaconda – Python 3.7 Installation / Moodle-Code Runner
+Algorithm:
+1. Get the input matrix using np.array()   
+2. Find the 2-norm of the matrix using np.linalg.norm()
+3. Print the norm of the matrix in two decimal places.
+Program:
+# Register No:
+# Developed By:
+# Register No:
+# Developed By:
+# 1-Norm of a Matrix
 import numpy as np
-n=int(input())
-arr=np.zeros((n,n+1))
-res=np.zeros(n)
-for i in range(n):
-    for j in range(n+1):
-        arr[i][j]=int(input())
-for i in range(n):
-    for j in range(i+1,n):
-        ratio=arr[j][i]/arr[i][i]
-        for k in range(n+1):
-            arr[j][k]=arr[j][k]-ratio*arr[i][k]
-res[n-1]=arr[n-1][n]/arr[n-1][n-1]
-for i in range(n-1,-1,-1):
-    res[i]=arr[i][n]
-    for j in range(i+1,n):
-        res[i]=res[i]-arr[i][j]*res[j]
-    res[i]=res[i]/arr[i][i]
-for i in range(n):
-    print("X%d = %0.2f" %(i,res[i]), end=" ")
-*/
-*/
-```
-
-## Output:
-![Alt text](image.png)
+array=([[-1,3],[3,-4],[1,7]])
+mat=np.array(eval(input()))
+ans=np.linalg.norm(mat,1)
+Norm_of_matrix="{:.2f}".format(ans)
+print(Norm_of_matrix
 
 
-## Result:
-Thus the program to find the solution of a matrix using Gaussian Elimination is written and verified using python programming.
+
+# 2-Norm of a Matrix
+import numpy as np
+array1=([[1,2],[3,4]])
+array2=([[-1,3],[3,-4],[1,7]])
+mat=np.array(eval(input()))
+ans=np.linalg.norm(mat,2)
+norm_of_matrix="{:.2f}".format(ans)
+print(norm_of_matrix)
+
+
+
+
+
+# Infinity Norm of a Matrix
+import numpy as np
+array1=([[-1,3],[3,-4],[1,7]])
+mat=np.array(eval(input()))
+ans=np.linalg.norm(mat,np.inf)
+norm_of_matrix="{:.2f}".format(ans)
+print(norm_of_matrix)
+
+
+
+
+
+Output:
+1-Norm of a Matrix
+
+![Alt text](image-1.png)
+
+2-Norm of a Matrix
+![Alt text](image-2.png)
+
+
+Infinity Norm of a Matrix
+![Alt text](image-3.png)
+
+
+Result
+Thus the program for 1-norm, 2-norm and Infinity norm of a matrix are written and verified.
 
